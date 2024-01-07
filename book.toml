@@ -1,0 +1,11 @@
+[book]
+authors = ["Glyn Normington"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Librecar Wiki"
+
+[output.html]
+curly-quotes = true
+git-repository-url = "https://github.com/disdi/librecar-wiki"
+site-url = "https://disdi.github.io/librecar-wiki/"
