@@ -1,2 +1,2 @@
-# Librecar Control Wiki
+# LibreCar Control Wiki
 
