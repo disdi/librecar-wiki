@@ -37,6 +37,9 @@ python3 ./litex_setup.py --dev --init
 python3 ./litex_setup.py --init --install --user 
 ```
 
+Apart from all litex packages *ctucan_migen_wb_wrapper* should also be installed.
+
+
 * Current CAN Litex support is implemented on [Xilinx FPGA board Arty A7-100T](https://digilent.com/shop/arty-a7-100t-artix-7-fpga-development-board/).
 
 Checkout  [Litex Board Repo](https://github.com/disdi/litex-boards).
