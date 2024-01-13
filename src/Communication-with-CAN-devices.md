@@ -21,7 +21,9 @@ ip link set up can0
 * Connect CAN Controller  to CAN Transceiver PMOD
 
 CAN Controller output pins are exposed on PMOD-C(JC) of Arty A7-100T board. 
-Connect [CAN Transciever PMOD](https://github.com/disdi/canpmod) to board over PMOD-C(JC).
+Connect [CAN Transciever PMOD](https://github.com/disdi/canpmod) designed in this project, for easy connection to fpga board over PMOD-C(JC).
+![canpmod-3d](canpmod-3d.png)
+
 
 * Connect a CAN device to other end of CAN Transciever PMOD.
 
