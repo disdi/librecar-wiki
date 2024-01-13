@@ -9,7 +9,7 @@ Enable `BR2_PACKAGE_CAN_UTILS=y` in buildroot rootfs.
 
 * We would also need iproute2 package to bringup CAN on Linux where it is treated as a network device.
 
-Enable BR2_PACKAGE_IPROUTE2=y in buildroot rootfs.
+Enable `BR2_PACKAGE_IPROUTE2=y` in buildroot rootfs.
 
 * Once resulting rootfs is flashed to target, socketcan device can be brought up on Linux with 100 Kbit/s bitrate.
 

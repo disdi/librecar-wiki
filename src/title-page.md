@@ -2,7 +2,15 @@
 
 **Welcome to the LibreCar Control Wiki!**
 
-LibreCar Control is a automotive exploration tool that can act like an ECU, an OBD port, a vehicle, or an industrial device. 
+Current trend in  automotive world is moving towards a zone architecture that classifies ECUs by their physical location inside the vehicle, leveraging a central gateway to manage communication. This physical proximity reduces cabling between ECUs to save space and reduce vehicle weight, while also improving processor speeds.
+
+ECUs with actuators and sensors are connected by lower bandwidth bus of 1Mb/s with CAN and main connection backbone is higher bandwidth of 10Mb/s or 100Mb/s with Automotive Ethernet.  
+
+
+ ![Zonal Architecture](zone-arch.png)
+
+
+LibreCar Control is a automotive exploration tool that can emulate conenctions inside an automotive vehicle talking between different protocols and buses. 
 
 It can be used to:
 
