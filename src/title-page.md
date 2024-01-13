@@ -10,7 +10,7 @@ ECUs with actuators and sensors are connected by lower bandwidth bus of 1Mb/s wi
  ![Zonal Architecture](zone-arch.png)
 
 
-LibreCar Control is a automotive exploration tool that can emulate conenctions inside an automotive vehicle talking between different protocols and buses. 
+LibreCar Control is a automotive exploration tool that can emulate connections inside an automotive vehicle talking between different protocols and buses. 
 
 It can be used to:
 
@@ -24,3 +24,7 @@ It can be used to:
 - [ ] Act as a CAN-Ethernet Gateway allowing the connection of CAN bus over IP networks inside a vehicle.
 
 ![can-ethernet](can-ethernet.png) 
+
+
+
+We use [LiteX SoC builder framework](https://github.com/enjoy-digital/litex) to provide a RISC-V soft processor core and integrate with it peripherals like CAN and Ethernet used in automotive world
