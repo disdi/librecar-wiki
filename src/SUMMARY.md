@@ -4,3 +4,4 @@
 [Litex Bringup](./Litex-bringup.md)
 [Linux Bringup](./Linux-bringup.md)
 [CAN communication](./Communication-with-CAN-devices.md)
+[Funding](./Funding.md)
