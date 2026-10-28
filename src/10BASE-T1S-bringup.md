@@ -2,11 +2,13 @@
 
 **Plan to attach IEEE 802.3cg 10BASE-T1S to the same Arty A7-100T LiteX SoC that already runs CAN and lab Ethernet.**
 
+**Project Page** : [Open-single-pair-ethernet](https://saketsinha.de/open-single-pair-ethernet/)
+
 10BASE-T1S is a 10 Mb/s half-duplex mixing segment on one twisted pair. Nodes share the pair. PLCA (Physical Layer Collision Avoidance) grants transmit turns so the bus stays deterministic. That is the 10 Mb/s automotive backbone drawn on the [Introduction](title-page.md).
 
 The Arty onboard PHY on J9 remains 100/1000BASE-T for TFTP and lab IP. This chapter is the second Ethernet: RMII to a LAN8670 PMOD on **JB**.
 
-This page is a bring-up plan. A working LiteEth 10BASE-T1S bitstream, MDIO init and a measured link are still open. The Step 0 module is on an engineering fabrication hold.
+This page is a bring-up plan. A working LiteEth 10BASE-T1S bitstream, MDIO init and a measured link are still open.
 
 ## Hardware
 
@@ -58,5 +60,3 @@ That shrinks the cable-side part to a TC14 transceiver such as a TJA1410. It is 
 - PLCA register init and a half-duplex MAC configuration
 - 50 MHz clock timing closure on the Arty
 - Physical mating, U2 clock qualification and the rest of the Step 0 fabrication hold
-
-Do not tick the automotive-Ethernet box on the introduction until a board is up and packets move on the pair.

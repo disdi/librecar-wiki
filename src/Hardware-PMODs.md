@@ -45,7 +45,7 @@ The 3D render on the CAN page is the original drawing. The front plot above is t
 
 ## 10BASE-T1S PMOD (JB)
 
-Project: [disdi/open-single-pair-ethernet](https://github.com/disdi/open-single-pair-ethernet), Step 0, revision 0.2. The PHY is a Microchip LAN8670 in RMII mode. The cable side is a 2-pin screw terminal on a 10BASE-T1S mixing segment.
+Project: [open-single-pair-ethernet](https://saketsinha.de/open-single-pair-ethernet/#step-0-), Step 0. The PHY is a Microchip LAN8670 in RMII mode. The cable side is a 2-pin screw terminal on a 10BASE-T1S mixing segment.
 
 ![Step 0 silkscreen](step0-silk.svg)
 
