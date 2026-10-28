@@ -1,6 +1,8 @@
 # The Librecar Control Wiki
 
-Wiki to illustrate Librecar Control Project
+Wiki to illustrate Librecar Control Project.
+
+The book covers LiteX and Linux bring-up on an Arty A7-100T, SocketCAN on JC, lab Ethernet on J9, and the Open Single Pair Ethernet path (LAN8670 PMOD on JB) toward a CAN–10BASE-T1S zonal gateway.
 
 ## Pull Requests
 

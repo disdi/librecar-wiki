@@ -42,7 +42,8 @@ cp arty.dtb images/rv32.dtb
 
 * Load the kernel binaries using TFTP server
 
-Connect the board's Ethernet port to a switch/router port that places it into the same LAN as the machine acting as your TFTP server. 
+Connect the board's Ethernet port (J9, onboard PHY) to a switch/router port that places it into the same LAN as the machine acting as your TFTP server.
+Leave J9 on the lab LAN even after a 10BASE-T1S module is fitted on JB. TFTP and SSH stay on this PHY. 
 
 Ensure that kernel binaries are available in the TFTP directory, and that the TFTP server (or socket, if using systemd) is started:
 ```
@@ -65,5 +66,7 @@ screen /dev/ttyUSB1 115200
 
 [Socketcan](https://www.kernel.org/doc/html/next/networking/can.html) interface should bringup CAN as a networking device.
 ![ctucan-net.png](ctucan-net.png)
+
+The onboard `eth0` on J9 is the lab interface used above. A future 10BASE-T1S netdev on JB is a second Ethernet; see [10BASE-T1S bringup](10BASE-T1S-bringup.md).
 
 

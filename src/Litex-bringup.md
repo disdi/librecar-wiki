@@ -60,6 +60,7 @@ It creates a bitstream file at *build/digilent_arty/gateware/digilent_arty.bit*
 * Connect Arty A7-100T (J10) to PC using a MicroUSB cable (power, console and programming).
  
 Optionally connect Arty A7-100T (J9) to Switch/Router using a LAN cable and PMOD Sdcard (J10).
+J9 is the onboard lab PHY (TFTP and IP). The CAN transceiver PMOD uses JC. The 10BASE-T1S PMOD uses JB; see [Hardware PMODs](Hardware-PMODs.md).
 
 ![connection](arty-connection.png) 
  
