@@ -10,7 +10,7 @@ Pull requests are welcome. Please ensure they conform to the conventions describ
 
 ## Viewing
 
-See the [rendered book](https://disdi.github.io/librecar-wiki/).
+See the [rendered book](https://librecar.dev/).
 
 ## Development
 
@@ -51,4 +51,6 @@ Commit logs should describe the specific changes made by a commit. See [How to W
 ## Deployment
 
 The book is deployed to the `gh-pages` branch by CI on a push to the `main`
-branch.
+branch. GitHub Pages serves it at [https://librecar.dev](https://librecar.dev/).
+The workflow writes the `CNAME` file so the custom domain survives each
+rebuild.

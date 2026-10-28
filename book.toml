@@ -7,4 +7,4 @@ title = "Librecar Wiki"
 [output.html]
 smart-punctuation = true
 git-repository-url = "https://github.com/disdi/librecar-wiki"
-site-url = "https://disdi.github.io/librecar-wiki/"
+site-url = "https://librecar.dev/"
