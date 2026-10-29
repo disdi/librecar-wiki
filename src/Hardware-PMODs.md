@@ -64,7 +64,7 @@ Revision 0.2 is the Arty JB direct-plug order. CLK50 is PMOD pin 1 so it reaches
 | 5, 11 | GND | Ground | — |
 | 6, 12 | +3V3 | 3.3 V | Supply to module |
 
-Package pins are from the [Digilent Arty A7-100 Rev D/E master XDC](https://github.com/Digilent/digilent-xdc/blob/master/Arty-A7-100-Master.xdc), consulted 2026-10-26. Confirm the physical Arty revision before building a bitstream.
+Package pins are from the [Digilent Arty A7-100 Rev D/E master XDC](https://github.com/Digilent/digilent-xdc/blob/master/Arty-A7-100-Master.xdc).
 
 The FPGA receives CLK50 from the module. Keep TXEN inactive during configuration and reset. Release PHY reset after 3.3 V and the 50 MHz oscillator are stable.
 
@@ -78,4 +78,4 @@ J2 is the cable connector: pin 1 TRX_P, pin 2 TRX_N. Fit both JP1 and JP2 for an
 
 Plug the CAN module into JC and the 10BASE-T1S module into JB with the PMOD keys aligned and both grounds connected. Check connector type, orientation and mechanical clearance before assembly.
 
-The CAN chapter is a working SocketCAN path once the transceiver is fitted. The 10BASE-T1S chapter is the planned LiteEth path; there is no proven Arty bitstream for that PHY in this wiki yet. Step 0 remains on an engineering fabrication hold for clock qualification, host timing, stackup/DFM and assembler acceptance.
+The CAN chapter is a working SocketCAN path once the transceiver is fitted. The 10BASE-T1S chapter is the planned LiteEth path; there is no proven Arty bitstream for that PHY in this wiki yet.

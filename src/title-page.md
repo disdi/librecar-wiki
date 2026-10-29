@@ -46,6 +46,6 @@ The two PMODs and the onboard PHY can sit on the board together. JB is also used
 
 Pin maps, termination and mating notes are on [Hardware PMODs](Hardware-PMODs.md). CAN bring-up stays on [CAN communication](Communication-with-CAN-devices.md). The automotive Ethernet path is on [10BASE-T1S bringup](10BASE-T1S-bringup.md). Putting both buses on one SoC is [Zonal gateway](Zonal-gateway.md).
 
-The Step 0 LAN8670 module is designed and routed. LiteEth RMII/PLCA integration and a working 10BASE-T1S link remain open, and the module is on an engineering fabrication hold. Catalogue matching and clean DRC are not a working bus.
+The Step 0 LAN8670 module is designed and routed. LiteEth RMII/PLCA integration and a working 10BASE-T1S link remain open.
 
 Roadmap and schematic notes live in [Open Single Pair Ethernet](http://saketsinha.de/open-single-pair-ethernet/).

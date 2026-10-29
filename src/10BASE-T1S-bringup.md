@@ -12,7 +12,7 @@ This page is a bring-up plan. A working LiteEth 10BASE-T1S bitstream, MDIO init 
 
 ## Hardware
 
-Fit the Step 0 LAN8670 PMOD on JB. Pin map, clock, reset, MDIO header J3 and termination jumpers are on [Hardware PMODs](Hardware-PMODs.md).
+Fit the [Step 0 LAN8670 PMOD](https://saketsinha.de/open-single-pair-ethernet/#step-0-) on JB. Pin map, clock, reset, MDIO header J3 and termination jumpers are on [Hardware PMODs](Hardware-PMODs.md).
 
 ```
 FPGA (LiteX)
@@ -39,15 +39,17 @@ MODE1 is pulled up and MODE0 pulled down, so the PHY is in RMII. The 50 MHz osci
 4. Add MDC and MDIO on two spare GPIOs to module header J3.
 5. Keep the existing J9 MAC for TFTP. The LAN8670 is a second interface.
 
-Revision 0.2 uses the Arty-specific JB order (CLK50 on pin 1). Copying an older Katze/LiteX RMII pinout will swap the clock and TXD0.
+10BaseT1S PMOD uses the Arty-specific JB order (CLK50 on pin 1). Derived from [Katze/LiteX RMII](https://github.com/machdyne/katze/) pinout will swap the clock and TXD0.
 
 Half-duplex 10BASE-T1S with PLCA is extra work on top of a generic RMII 100 Mb/s PHY. After reset, software writes the PLCA registers over MDIO (node ID, beacon, transmit opportunity). The PHY address is 0; the PLCA node ID is that register, not the PHY address.
 
 Linux later sees this port as a second `eth` device. SocketCAN stays on `can0` from CTUCAN.
 
-## Later: digital PHY
+This work is planned as part of [Step-1 : mac-with-external-phy-10baset1s-phy-from-microchip-lan8670](https://saketsinha.de/open-single-pair-ethernet/#step-1--mac-with-external-phy-10baset1s-phy-from-microchip-lan8670)
 
-Once the external PHY path works, Step 2 moves Clause 147 PCS and Clause 148 PLCA into FPGA RTL and talks to a small analog PMD over the OPEN Alliance TC14 3-pin interface.
+## digital PHY
+
+Once the external PHY path works, [Step 2 : digital-phy-pcs--plca-inside-fpga](https://saketsinha.de/open-single-pair-ethernet/#step-2--digital-phy-pcs--plca-inside-fpga) moves Clause 147 PCS and Clause 148 PLCA into FPGA RTL and talks to a small analog PMD over the OPEN Alliance TC14 3-pin interface.
 
 ![Step 2: digital PHY inside the FPGA](step2.png)
 
