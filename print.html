@@ -1,0 +1,611 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Librecar Wiki</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-7d522137.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-cc8278e5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Librecar Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/disdi/librecar-wiki" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="librecar-control-wiki"><a class="header" href="#librecar-control-wiki">LibreCar Control Wiki</a></h1>
+<p><strong>Welcome to the LibreCar Control Wiki!</strong></p>
+<p>Current trend in  automotive world is moving towards a zone architecture that classifies ECUs by their physical location inside the vehicle, leveraging a central gateway to manage communication. This physical proximity reduces cabling between ECUs to save space and reduce vehicle weight, while also improving processor speeds.</p>
+<p>ECUs with actuators and sensors are connected by lower bandwidth bus of 1Mb/s with CAN and main connection backbone is higher bandwidth of 10Mb/s or 100Mb/s with Automotive Ethernet.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="zone-arch.png" alt="Zonal Architecture"><span class="img-wrapper"><img src="zone-arch.png" alt="Zonal Architecture"></span></label></p>
+<p>LibreCar Control is a automotive exploration tool that can emulate connections inside an automotive vehicle talking between different protocols and buses.</p>
+<p>It can be used to:</p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox" checked=""> Send and Receive CANbus data from any low cost fpga inside a vehicle.
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="CAN-Gateway.png" alt="CAN-Gateway"><span class="img-wrapper"><img src="CAN-Gateway.png" alt="CAN-Gateway"></span></label></p>
+</li>
+<li>
+<p><input disabled="" type="checkbox" checked=""> Send and Receive Ethernet packets from the Arty onboard PHY (J9) for lab and TFTP use.</p>
+</li>
+</ul>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="ethernet2.png" alt="ethernet2"><span class="img-wrapper"><img src="ethernet2.png" alt="ethernet2"></span></label></p>
+<ul>
+<li><input disabled="" type="checkbox" checked=""> Act as a CAN-Ethernet Gateway on that lab network, carrying CAN frames over IP with <a href="https://github.com/mguentner/cannelloni">cannelloni</a>. See <a href="https://librecar.dev/2024/04/milestone-four-complete/">Milestone 4</a>.</li>
+</ul>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="can-ethernet.png" alt="can-ethernet"><span class="img-wrapper"><img src="can-ethernet.png" alt="can-ethernet"></span></label></p>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Send and Receive Automotive Ethernet (IEEE 802.3cg 10BASE-T1S) from the same FPGA, using the Step 0 LAN8670 PMOD on JB.</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Act as a CAN–10BASE-T1S zonal gateway, with CAN on JC and the 10 Mb/s mixing segment on JB.</p>
+</li>
+</ul>
+<p>We use <a href="https://github.com/enjoy-digital/litex">LiteX SoC builder framework</a> to provide a RISC-V soft processor core and integrate with it peripherals like CAN and Ethernet used in automotive world.</p>
+<h2 id="hardware-on-this-arty"><a class="header" href="#hardware-on-this-arty">Hardware on this Arty</a></h2>
+<p>The host for these pages is a Digilent Arty A7-100T.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Connector</th><th>Role</th></tr>
+</thead>
+<tbody>
+<tr><td>J10</td><td>USB power, console and programming</td></tr>
+<tr><td>J9</td><td>Onboard Ethernet PHY: Linux TFTP and lab IP</td></tr>
+<tr><td>JC (PMOD-C)</td><td><a href="https://github.com/disdi/canpmod">CAN transceiver PMOD</a></td></tr>
+<tr><td>JB (PMOD-B)</td><td><a href="https://github.com/disdi/10BaseT1S-PMOD">10BASE-T1S PMOD</a>, revision 0.2</td></tr>
+</tbody>
+</table>
+</div>
+<p>The two PMODs and the onboard PHY can sit on the board together. JB is also used by the VexRiscv SWD debug work; run 10BASE-T1S or SWD on that header, one at a time.</p>
+<p>Pin maps, termination and mating notes are on <a href="#hardware-pmods">Hardware PMODs</a>. CAN bring-up stays on <a href="#communication-with-can-devices">CAN communication</a>. The automotive Ethernet path is on <a href="#10base-t1s-bringup">10BASE-T1S bringup</a>. Putting both buses on one SoC is <a href="#zonal-gateway">Zonal gateway</a>.</p>
+<p>The <a href="https://github.com/disdi/10BaseT1S-PMOD">10BASE-T1S LAN8670 module</a> is designed and routed. LiteEth RMII/PLCA integration and a working 10BASE-T1S link remain open.</p>
+<p>Roadmap notes live in <a href="https://saketsinha.de/open-single-pair-ethernet/">Open Single Pair Ethernet</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="litex-bringup"><a class="header" href="#litex-bringup">Litex Bringup</a></h1>
+<p><strong>Steps to bringup CAN bus on a 32-bit RISC-V CPU on Xilinx FPGA board Arty A7-100T!</strong></p>
+<ul>
+<li>Install prerequisite packages</li>
+</ul>
+<pre><code>sudo apt update
+sudo apt upgrade
+sudo apt install openocd fakeroot verilator python3 meson gtkterm gawk texinfo git python3-pip bison device-tree-compiler autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev build-essential flex gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build
+</code></pre>
+<ul>
+<li>Checkout  <a href="https://github.com/disdi/litex">Litex Repo</a>.</li>
+</ul>
+<pre><code>git clone https://github.com/disdi/litex
+cd litex
+
+</code></pre>
+<ul>
+<li>Install cross-compiler toolchain for RISC-V.</li>
+</ul>
+<pre><code>python3 ./litex_setup.py --gcc=riscv
+</code></pre>
+<p>Install <a href="https://github.com/openXC7">openxc7</a> or <a href="https://www.xilinx.com/products/design-tools/vivado.html">Xilinx Vivado</a>.</p>
+<ul>
+<li>Install Litex pacakges</li>
+</ul>
+<pre><code>python3 ./litex_setup.py --dev --init
+</code></pre>
+<ul>
+<li>Install litex with CAN support</li>
+</ul>
+<pre><code>python3 ./litex_setup.py --init --install --user 
+</code></pre>
+<p>Apart from all litex packages <em>ctucan_migen_wb_wrapper</em> should also be installed.</p>
+<ul>
+<li>Current CAN Litex support is implemented on <a href="https://digilent.com/shop/arty-a7-100t-artix-7-fpga-development-board/">Xilinx FPGA board Arty A7-100T</a>.</li>
+</ul>
+<p>Checkout  <a href="https://github.com/disdi/litex-boards">Litex Board Repo</a>.</p>
+<pre><code>git clone https://github.com/disdi/litex-boards
+cd litex-boards
+</code></pre>
+<ul>
+<li>Build bitstream for Arty board. (Install riscv toolchain and Vivado if not already present.)</li>
+</ul>
+<pre><code>python3 litex_boards/targets/digilent_arty.py --variant=a7-100 --build
+
+</code></pre>
+<p>It creates a bitstream file at <em>build/digilent_arty/gateware/digilent_arty.bit</em></p>
+<ul>
+<li>Connect Arty A7-100T (J10) to PC using a MicroUSB cable (power, console and programming).</li>
+</ul>
+<p>Optionally connect Arty A7-100T (J9) to Switch/Router using a LAN cable and PMOD Sdcard (J10).
+J9 is the onboard lab PHY (TFTP and IP). The CAN transceiver PMOD uses JC. The 10BASE-T1S PMOD uses JB; see <a href="#hardware-pmods">Hardware PMODs</a>.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="arty-connection.png" alt="connection"><span class="img-wrapper"><img src="arty-connection.png" alt="connection"></span></label></p>
+<p>Load the bitstream from PC to Arty with –load option or directly using openocd.</p>
+<pre><code>python3 litex_boards/targets/digilent_arty.py --variant=a7-100 --load
+
+</code></pre>
+<ul>
+<li>Open ttyUSB port to read board serial logs.</li>
+</ul>
+<p>To connect to the system’s console, use the screen utility (assuming /dev/ttyUSB1 is used, below):</p>
+<pre><code>screen /dev/ttyUSB1 115200
+</code></pre>
+<p>Litex should bootup and <em>mem_list</em> should show CAN peripheral.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="litex-can-memlist.png" alt="litex-can-memlist"><span class="img-wrapper"><img src="litex-can-memlist.png" alt="litex-can-memlist"></span></label></p>
+<p>This should match the value of CSR register address generated by Litex.</p>
+<pre><code>grep "#define CSR[A-Z_]*BASE"  build/digilent_arty/software/include/generated/csr.h
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="linux-bringup"><a class="header" href="#linux-bringup">Linux Bringup</a></h1>
+<p><strong>Steps to bringup Linux on LiteX with a 32-bit RISC-V CPU on Xilinx FPGA board Arty A7-100T and run 32-bit Linux.</strong></p>
+<ul>
+<li>Clone the <a href="https://github.com/disdi/linux-on-litex-vexriscv">linux-on-litex-vexriscv</a> reopsitory with CAN support.</li>
+</ul>
+<pre><code>git clone https://github.com/disdi/linux-on-litex-vexriscv
+</code></pre>
+<ul>
+<li>Create bitstream with Linux support for Arty A7-100T and flash it.</li>
+</ul>
+<pre><code>./make.py --board=arty --variant=a7-100  --build --load
+</code></pre>
+<ul>
+<li>Create kernel binaries with CAN support enabled</li>
+</ul>
+<pre><code>git clone http://github.com/buildroot/buildroot
+cd buildroot
+make BR2_EXTERNAL=../linux-on-litex-vexriscv/buildroot/ litex_vexriscv_defconfig
+</code></pre>
+<p>Enable CTUCAN in linux kernel with <code>make menuconfig</code>
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="ctucan-config.png" alt="ctucan-config"><span class="img-wrapper"><img src="ctucan-config.png" alt="ctucan-config"></span></label></p>
+<p>Build the kernel binaries</p>
+<pre><code>make
+</code></pre>
+<p>The binaries are located in <code>images</code>.</p>
+<ul>
+<li>Create <a href="https://github.com/disdi/linux-on-litex-vexriscv/blob/master/patch/arty.dts">new devicetree</a> since somehow devicetree created by Litex in not currently configurable.</li>
+</ul>
+<p>Compile new devicetree binary with dtc compiler and replace it with one created by Litex.</p>
+<pre><code>cd patch
+dtc -O dtb -o arty.dtb arty.dts
+cp arty.dtb images/rv32.dtb
+
+</code></pre>
+<ul>
+<li>Load the kernel binaries using TFTP server</li>
+</ul>
+<p>Connect the board’s Ethernet port (J9, onboard PHY) to a switch/router port that places it into the same LAN as the machine acting as your TFTP server.
+Leave J9 on the lab LAN even after a 10BASE-T1S module is fitted on JB. TFTP and SSH stay on this PHY.</p>
+<p>Ensure that kernel binaries are available in the TFTP directory, and that the TFTP server (or socket, if using systemd) is started:</p>
+<pre><code>sudo cp images/* /var/lib/tftpboot/
+sudo systemctl start tftp.socket
+</code></pre>
+<ul>
+<li>Open ttyUSB port to read board serial logs.</li>
+</ul>
+<p>To connect to the system’s console, use the screen utility (assuming /dev/ttyUSB1 is used, below):</p>
+<pre><code>screen /dev/ttyUSB1 115200
+</code></pre>
+<ul>
+<li>
+<p>Linux should bootup and bootup logs should show CAN peripheral.
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="ctucan-linux-boot.png" alt="ctucan-linux-boot.png"><span class="img-wrapper"><img src="ctucan-linux-boot.png" alt="ctucan-linux-boot.png"></span></label></p>
+</li>
+<li>
+<p>Linux socketcan interface should be up.</p>
+</li>
+</ul>
+<p><a href="https://www.kernel.org/doc/html/next/networking/can.html">Socketcan</a> interface should bringup CAN as a networking device.
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="ctucan-net.png" alt="ctucan-net.png"><span class="img-wrapper"><img src="ctucan-net.png" alt="ctucan-net.png"></span></label></p>
+<p>The onboard <code>eth0</code> on J9 is the lab interface used above. A future 10BASE-T1S netdev on JB is a second Ethernet; see <a href="#10base-t1s-bringup">10BASE-T1S bringup</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="hardware-pmods"><a class="header" href="#hardware-pmods">Hardware PMODs</a></h1>
+<p>LibreCar uses two 12-pin PMODs on the Arty A7-100T. The CAN module hangs off <strong>JC</strong>. The 10BASE-T1S module hangs off <strong>JB</strong>. The onboard RJ45 at <strong>J9</strong> stays the lab Ethernet port used for TFTP in <a href="#linux-bringup">Linux Bringup</a>.</p>
+<p>Both modules are 3.3 V. The FPGA supplies power on the PMOD 3.3 V pins. The host supplies the protocol controller: CTUCAN for CAN, LiteEth RMII plus MDIO for 10BASE-T1S.</p>
+<h2 id="connector-map"><a class="header" href="#connector-map">Connector map</a></h2>
+<pre><code>                  Arty A7-100T
+  JC ── CAN PMOD ── twisted pair ── CAN device
+  JB ── Step 0 PMOD ── single pair ── 10BASE-T1S segment
+  J9 ── onboard PHY ── RJ45 ── lab LAN / TFTP
+  J10 ─ USB ── console and programming
+</code></pre>
+<p>JB is a high-speed PMOD (no 200 Ω series resistors). That is why the 50 MHz RMII clock uses JB. JA and JD have series resistors and are a poor fit for that clock.</p>
+<p>The VexRiscv SWD debug path also uses JB. Keep 10BASE-T1S and SWD off the same header in one sitting.</p>
+<h2 id="can-transceiver-pmod-jc"><a class="header" href="#can-transceiver-pmod-jc">CAN transceiver PMOD (JC)</a></h2>
+<p>Project: <a href="https://github.com/disdi/canpmod">disdi/canpmod</a>. Active sources are KiCad 9.0.8. License is MIT, copyright 2024 disdi. The module is an SN65HVD230 plus a 2-pin CAN terminal and a 120 Ω termination jumper. The FPGA implements the CAN controller.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="canpmod-front.svg" alt="Current CAN PMOD front copper and silkscreen"><span class="img-wrapper"><img src="canpmod-front.svg" alt="Current CAN PMOD front copper and silkscreen"></span></label></p>
+<p>Viewed from the PCB top with the plug pointing left, pins 1–6 run top to bottom in the inboard row and pins 7–12 run top to bottom in the outboard row. Pin 1 is square and marked on silkscreen.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>PMOD pin</th><th>Signal</th><th>Direction relative to host</th></tr>
+</thead>
+<tbody>
+<tr><td>1, 2, 3</td><td>NC</td><td>Unconnected</td></tr>
+<tr><td>4</td><td>CAN RX</td><td>Input to host</td></tr>
+<tr><td>5</td><td>GND</td><td>Ground</td></tr>
+<tr><td>6</td><td>3.3 V</td><td>Supply from host</td></tr>
+<tr><td>7, 8, 9</td><td>NC</td><td>Unconnected</td></tr>
+<tr><td>10</td><td>CAN TX</td><td>Output from host</td></tr>
+<tr><td>11</td><td>GND</td><td>Ground</td></tr>
+<tr><td>12</td><td>3.3 V</td><td>Supply from host</td></tr>
+</tbody>
+</table>
+</div>
+<p>J1 on the module is the 5.08 mm CAN terminal: pin 1 CAN_L, pin 2 CAN_H. Fit JP1 for an end node. Leave JP1 open for an intermediate node. The removable shunt is a separate accessory.</p>
+<p>R1 is 4.7 kΩ slope control. R2 pulls TX high. C1 is 100 nF supply bypass. R3/C2 and R4/C3 are 100 Ω / 560 pF RC branches from each bus line to ground. There is no CAN controller, isolation, extra TVS device or bus reference-ground terminal on the module.</p>
+<p>The 3D render on the CAN page is the original drawing. The front plot above is the current corrected board.</p>
+<h2 id="10base-t1s-pmod-jb"><a class="header" href="#10base-t1s-pmod-jb">10BASE-T1S PMOD (JB)</a></h2>
+<p>Project: <a href="https://github.com/disdi/10BaseT1S-PMOD">disdi/10BaseT1S-PMOD</a>. Active sources are KiCad 9.0.8, revision 0.2. License is MIT, copyright 2024 disdi, the same text as canpmod. The PHY is a Microchip LAN8670 in RMII mode. The cable side is a 2-pin screw terminal on a 10BASE-T1S mixing segment. Roadmap notes remain in <a href="https://saketsinha.de/open-single-pair-ethernet/#step-0-">Open Single Pair Ethernet</a>.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="step0-silk.svg" alt="Step 0 silkscreen"><span class="img-wrapper"><img src="step0-silk.svg" alt="Step 0 silkscreen"></span></label></p>
+<p>Revision 0.2 is the Arty JB direct-plug order. CLK50 is PMOD pin 1 so it reaches Arty E15 (SRCC). TXD0 is pin 10 (J15). Earlier Katze/LiteX pinouts differ; this revision needs its own LiteX platform constraints.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Module J1 / Arty JB</th><th>Signal</th><th>FPGA package pin</th><th>Direction at FPGA</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>CLK50</td><td>E15, SRCC</td><td>Input clock</td></tr>
+<tr><td>2</td><td>TXD1</td><td>E16</td><td>Output</td></tr>
+<tr><td>3</td><td>TXEN</td><td>D15</td><td>Output</td></tr>
+<tr><td>4</td><td>CRS_DV</td><td>C15</td><td>Input</td></tr>
+<tr><td>7</td><td>RXD0</td><td>J17</td><td>Input</td></tr>
+<tr><td>8</td><td>RXD1</td><td>J18</td><td>Input</td></tr>
+<tr><td>9</td><td>RST_N</td><td>K15</td><td>Output</td></tr>
+<tr><td>10</td><td>TXD0</td><td>J15</td><td>Output</td></tr>
+<tr><td>5, 11</td><td>GND</td><td>Ground</td><td>—</td></tr>
+<tr><td>6, 12</td><td>+3V3</td><td>3.3 V</td><td>Supply to module</td></tr>
+</tbody>
+</table>
+</div>
+<p>Package pins are from the <a href="https://github.com/Digilent/digilent-xdc/blob/master/Arty-A7-100-Master.xdc">Digilent Arty A7-100 Rev D/E master XDC</a>.</p>
+<p>The FPGA receives CLK50 from the module. Keep TXEN inactive during configuration and reset. Release PHY reset after 3.3 V and the 50 MHz oscillator are stable.</p>
+<p>MDIO is a separate 3-pin header J3 on the module: pin 1 MDC, pin 2 MDIO, pin 3 GND. Those nets are off J1. Wire MDC and MDIO to two spare 3.3 V FPGA GPIOs and a common ground. IRQ_N stays on the module.</p>
+<p>PHY address straps pull down, so the MDIO address is 0. PLCA node ID is a register, written over MDIO after reset.</p>
+<p>J2 is the cable connector: pin 1 TRX_P, pin 2 TRX_N. Fit both JP1 and JP2 for an end-node 100 Ω termination. Leave both open for a drop node.</p>
+<h2 id="mating-and-status"><a class="header" href="#mating-and-status">Mating and status</a></h2>
+<p>Plug the CAN module into JC and the 10BASE-T1S module into JB with the PMOD keys aligned and both grounds connected. Check connector type, orientation and mechanical clearance before assembly.</p>
+<p>The CAN chapter is a working SocketCAN path once the transceiver is fitted. The 10BASE-T1S chapter is the planned LiteEth path; there is no proven Arty bitstream for that PHY in this wiki yet.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="communication-with-can-devices"><a class="header" href="#communication-with-can-devices">Communication with CAN devices</a></h1>
+<p><strong>Steps to bringup CAN communication on a 32-bit RISC-V CPU on Xilinx FPGA board Arty A7-100T.</strong></p>
+<ul>
+<li>We would need to install a handful of very useful CANbus utilities for linux.
+This is packaged as can-utils for Linux.</li>
+</ul>
+<p>Enable <code>BR2_PACKAGE_CAN_UTILS=y</code> in buildroot rootfs.</p>
+<ul>
+<li>We would also need iproute2 package to bringup CAN on Linux where it is treated as a network device.</li>
+</ul>
+<p>Enable <code>BR2_PACKAGE_IPROUTE2=y</code> in buildroot rootfs.</p>
+<ul>
+<li>Once resulting rootfs is flashed to target, socketcan device can be brought up on Linux with 100 Kbit/s bitrate.</li>
+</ul>
+<pre><code>ip link set can0 type can bitrate 100000
+ip link set up can0
+</code></pre>
+<ul>
+<li>Connect CAN Controller  to CAN Transceiver PMOD</li>
+</ul>
+<p>CAN Controller output pins are exposed on PMOD-C(JC) of Arty A7-100T board.
+Connect <a href="https://github.com/disdi/canpmod">CAN Transciever PMOD</a> designed in this project, for easy connection to fpga board over PMOD-C(JC).
+The current board, pin map and termination jumper are on <a href="#hardware-pmods">Hardware PMODs</a>.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>PMOD pin</th><th>Signal</th></tr>
+</thead>
+<tbody>
+<tr><td>4</td><td>CAN RX (to FPGA)</td></tr>
+<tr><td>10</td><td>CAN TX (from FPGA)</td></tr>
+<tr><td>5, 11</td><td>GND</td></tr>
+<tr><td>6, 12</td><td>3.3 V from the Arty</td></tr>
+<tr><td>J1 pin 1 / pin 2</td><td>CAN_L / CAN_H</td></tr>
+</tbody>
+</table>
+</div>
+<p>Fit JP1 on the module for an end node. Leave it open for a drop node.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="canpmod-front.svg" alt="Current CAN PMOD front plot"><span class="img-wrapper"><img src="canpmod-front.svg" alt="Current CAN PMOD front plot"></span></label></p>
+<p>The original 3D view is kept for reference:</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="canpmod-3d.png" alt="canpmod-3d"><span class="img-wrapper"><img src="canpmod-3d.png" alt="canpmod-3d"></span></label></p>
+<ul>
+<li>
+<p>Connect a CAN device to other end of CAN Transciever PMOD.</p>
+</li>
+<li>
+<p>Communicate between Arty A7-100T and CAN device usinf cansend from can-utils package.
+<label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="litex-can.png" alt="litex-can"><span class="img-wrapper"><img src="litex-can.png" alt="litex-can"></span></label></p>
+</li>
+</ul>
+<p>To carry those frames onto lab Ethernet see <a href="#zonal-gateway">Zonal gateway</a>. Automotive Ethernet on JB is a separate PHY: <a href="#10base-t1s-bringup">10BASE-T1S bringup</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="10base-t1s-bringup"><a class="header" href="#10base-t1s-bringup">10BASE-T1S bringup</a></h1>
+<p><strong>Plan to attach IEEE 802.3cg 10BASE-T1S to the same Arty A7-100T LiteX SoC that already runs CAN and lab Ethernet.</strong></p>
+<p><strong>Project Page</strong> : <a href="https://saketsinha.de/open-single-pair-ethernet/">Open-single-pair-ethernet</a></p>
+<p>10BASE-T1S is a 10 Mb/s half-duplex mixing segment on one twisted pair. Nodes share the pair. PLCA (Physical Layer Collision Avoidance) grants transmit turns so the bus stays deterministic. That is the 10 Mb/s automotive backbone drawn on the <a href="#librecar-control-wiki">Introduction</a>.</p>
+<p>The Arty onboard PHY on J9 remains 100/1000BASE-T for TFTP and lab IP. This chapter is the second Ethernet: RMII to a LAN8670 PMOD on <strong>JB</strong>.</p>
+<p>This page is a bring-up plan. A working LiteEth 10BASE-T1S bitstream, MDIO init and a measured link are still open.</p>
+<h2 id="hardware"><a class="header" href="#hardware">Hardware</a></h2>
+<p>Fit the <a href="https://github.com/disdi/10BaseT1S-PMOD">10BASE-T1S LAN8670 PMOD</a> on JB. Pin map, clock, reset, MDIO header J3 and termination jumpers are on <a href="#hardware-pmods">Hardware PMODs</a>.</p>
+<pre><code>FPGA (LiteX)
+  ├── LiteEthPHYRMII
+  ├── LiteEthPHYMDIO
+  └── software that writes PLCA registers
+         │
+         └── RMII + MDIO → LAN8670 PMOD (JB + J3)
+                │
+                └── 2-pin screw terminal → 10BASE-T1S pair
+</code></pre>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="step1.png" alt="Step 1: MAC with external PHY"><span class="img-wrapper"><img src="step1.png" alt="Step 1: MAC with external PHY"></span></label></p>
+<p>MODE1 is pulled up and MODE0 pulled down, so the PHY is in RMII. The 50 MHz oscillator on the module drives the PHY and JB pin 1. PHYAD[4:0] are pulled down (address 0).</p>
+<h2 id="litex--liteeth-work"><a class="header" href="#litex--liteeth-work">LiteX / LiteEth work</a></h2>
+<p><a href="https://github.com/enjoy-digital/liteeth">LiteEth</a> already has <code>LiteEthPHYRMII</code> and MDIO. The Arty platform file needs a second Ethernet instance on JB:</p>
+<ol>
+<li>Map RMII to the JB pins in the table on <a href="#hardware-pmods">Hardware PMODs</a>.</li>
+<li>Treat CLK50 as an FPGA input clock, with a 20 ns period constraint and RMII input/output delays for the whole Arty plus module path.</li>
+<li>Drive RST_N from an FPGA output. Hold TXEN inactive until reset is released.</li>
+<li>Add MDC and MDIO on two spare GPIOs to module header J3.</li>
+<li>Keep the existing J9 MAC for TFTP. The LAN8670 is a second interface.</li>
+</ol>
+<p>10BaseT1S PMOD uses the Arty-specific JB order (CLK50 on pin 1). Derived from <a href="https://github.com/machdyne/katze/">Katze/LiteX RMII</a> pinout will swap the clock and TXD0.</p>
+<p>Half-duplex 10BASE-T1S with PLCA is extra work on top of a generic RMII 100 Mb/s PHY. After reset, software writes the PLCA registers over MDIO (node ID, beacon, transmit opportunity). The PHY address is 0; the PLCA node ID is that register, not the PHY address.</p>
+<p>Linux later sees this port as a second <code>eth</code> device. SocketCAN stays on <code>can0</code> from CTUCAN.</p>
+<p>This work is planned as part of <a href="https://saketsinha.de/open-single-pair-ethernet/#step-1--mac-with-external-phy-10baset1s-phy-from-microchip-lan8670">Step-1 : mac-with-external-phy-10baset1s-phy-from-microchip-lan8670</a></p>
+<h2 id="digital-phy"><a class="header" href="#digital-phy">digital PHY</a></h2>
+<p>Once the external PHY path works, <a href="https://saketsinha.de/open-single-pair-ethernet/#step-2--digital-phy-pcs--plca-inside-fpga">Step 2 : digital-phy-pcs–plca-inside-fpga</a> moves Clause 147 PCS and Clause 148 PLCA into FPGA RTL and talks to a small analog PMD over the OPEN Alliance TC14 3-pin interface.</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="step2.png" alt="Step 2: digital PHY inside the FPGA"><span class="img-wrapper"><img src="step2.png" alt="Step 2: digital PHY inside the FPGA"></span></label></p>
+<p>That shrinks the cable-side part to a TC14 transceiver such as a TJA1410. It is the same MAC and application wrapper. It is not required for the first JB bring-up.</p>
+<h2 id="open-items"><a class="header" href="#open-items">Open items</a></h2>
+<ul>
+<li>LiteX platform constraints and a second LiteEth RMII instance on JB</li>
+<li>MDIO GPIO choice for J3</li>
+<li>PLCA register init and a half-duplex MAC configuration</li>
+<li>50 MHz clock timing closure on the Arty</li>
+<li>Physical mating, U2 clock qualification and the rest of the Step 0 fabrication hold</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="zonal-gateway"><a class="header" href="#zonal-gateway">Zonal gateway</a></h1>
+<p>The <a href="#librecar-control-wiki">Introduction</a> draws a zone controller: CAN toward nearby sensors and actuators, Automotive Ethernet as the 10 Mb/s backbone, and a CPU that bridges the two. On the Arty A7-100T that is three ports on one LiteX Linux SoC.</p>
+<pre><code>sensors / actuators ── CAN pair ── CAN PMOD @ JC ── CTUCAN ──┐
+                                                              ├─ VexRiscv Linux
+zonal backbone ──── 10BASE-T1S pair ── 10BASE-T1S PMOD @ JB ── LiteEth ┘
+lab / TFTP ──────── RJ45 ────── onboard PHY @ J9
+</code></pre>
+<p>CAN bring-up is <a href="#communication-with-can-devices">CAN communication</a>. The T1S PHY and LiteEth plan are <a href="#10base-t1s-bringup">10BASE-T1S bringup</a>. Pin maps are <a href="#hardware-pmods">Hardware PMODs</a>.</p>
+<h2 id="lab-gateway-already-on-j9"><a class="header" href="#lab-gateway-already-on-j9">Lab gateway already on J9</a></h2>
+<p><a href="https://librecar.dev/2024/04/milestone-four-complete/">Milestone 4</a> brought up the Arty onboard Ethernet in LiteX Linux and ran <a href="https://github.com/mguentner/cannelloni">cannelloni</a>. Cannelloni carries CAN frames over UDP/TCP/SCTP between a SocketCAN interface and a remote IP host.</p>
+<p>That path is:</p>
+<pre><code>can0 (CTUCAN + CAN PMOD) ── cannelloni ── eth0 (J9) ── IP network ── remote CAN
+</code></pre>
+<p>It is a CAN–Ethernet gateway on the lab LAN. It is the right tool for PC tooling, logging and a Raspberry Pi on the bench. J9 is office Ethernet. The zonal diagram’s backbone is 10BASE-T1S.</p>
+<p><a href="https://librecar.dev/2024/04/milestone-five/">Milestone 5</a> and the <a href="https://librecar.dev/2024/04/milestone-five-update/">XCP update</a> add UDS and XCP on that same Linux user-space. Those protocols can ride CAN or IP once the sockets exist.</p>
+<h2 id="automotive-gateway-on-jb"><a class="header" href="#automotive-gateway-on-jb">Automotive gateway on JB</a></h2>
+<p>Replace the IP hop with the mixing segment when the LAN8670 PMOD is up:</p>
+<pre><code>can0 (JC) ── user-space gateway ── eth1 (JB, 10BASE-T1S)
+</code></pre>
+<p>Same SocketCAN and Ethernet sockets. The cable becomes a single pair with PLCA instead of an RJ45 switch. Fit CAN JP1 and both 10BASE-T1S PMOD jumpers on end nodes. Leave them open on drop nodes.</p>
+<p>Useful first checks, once both interfaces exist:</p>
+<ol>
+<li><code>cansend</code> / <code>candump</code> on <code>can0</code> as in the CAN chapter.</li>
+<li>Ping or a raw Ethernet test toward another 10BASE-T1S node on <code>eth1</code>.</li>
+<li>cannelloni or a small user-space bridge between <code>can0</code> and <code>eth1</code>.</li>
+<li>XCP/UDS against an ECU on CAN, with the calibration tool on the T1S side or the other way around.</li>
+</ol>
+<h2 id="what-is-still-open"><a class="header" href="#what-is-still-open">What is still open</a></h2>
+<p>The lab gateway on J9 is documented on librecar.dev. The zonal T1S gateway needs the <a href="https://github.com/disdi/10BaseT1S-PMOD">10BASE-T1S PMOD</a>, LiteEth RMII/PLCA on JB, and a second Linux netdev. Those pieces are designed and not yet a proven link. Keep J9 connected while bringing T1S up so TFTP and SSH stay on the lab PHY.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="funding"><a class="header" href="#funding">Funding</a></h1>
+<p>This project is funded through the <a href="https://nlnet.nl/entrust/">NGI Zero Entrust Fund</a>, a fund established by <a href="https://nlnet.nl/">NLnet</a> with financial support from the European Commission’s <a href="https://www.ngi.eu/">Next Generation Internet</a> program.</p>
+<p>Learn more on the <a href="https://nlnet.nl/project/LibreCarControl/">NLnet project page</a>.</p>
+<p><a href="https://nlnet.nl"><img src="https://nlnet.nl/logo/banner.png" alt="NLnet foundation logo" width="20%" /></a>                                                    <a href="https://nlnet.nl/entrust"><img src="https://nlnet.nl/image/logos/NGI0_tag.svg" alt="NGI Zero Logo" width="20%" /></a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-09f2665d.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-609e4cb8.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
