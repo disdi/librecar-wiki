@@ -4,6 +4,8 @@ Wiki to illustrate Librecar Control Project.
 
 The book covers LiteX and Linux bring-up on an Arty A7-100T, SocketCAN on JC, lab Ethernet on J9, and the Open Single Pair Ethernet path (LAN8670 PMOD on JB) toward a CAN–10BASE-T1S zonal gateway.
 
+Hardware sources: [disdi/canpmod](https://github.com/disdi/canpmod) on JC and [disdi/10BaseT1S-PMOD](https://github.com/disdi/10BaseT1S-PMOD) on JB. Both are KiCad 9, MIT license.
+
 ## Pull Requests
 
 Pull requests are welcome. Please ensure they conform to the conventions described below.

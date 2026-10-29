@@ -12,7 +12,7 @@ This page is a bring-up plan. A working LiteEth 10BASE-T1S bitstream, MDIO init 
 
 ## Hardware
 
-Fit the [Step 0 LAN8670 PMOD](https://saketsinha.de/open-single-pair-ethernet/#step-0-) on JB. Pin map, clock, reset, MDIO header J3 and termination jumpers are on [Hardware PMODs](Hardware-PMODs.md).
+Fit the [10BASE-T1S LAN8670 PMOD](https://github.com/disdi/10BaseT1S-PMOD) on JB. Pin map, clock, reset, MDIO header J3 and termination jumpers are on [Hardware PMODs](Hardware-PMODs.md).
 
 ```
 FPGA (LiteX)

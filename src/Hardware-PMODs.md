@@ -20,7 +20,7 @@ The VexRiscv SWD debug path also uses JB. Keep 10BASE-T1S and SWD off the same h
 
 ## CAN transceiver PMOD (JC)
 
-Project: [disdi/canpmod](https://github.com/disdi/canpmod). Active sources are KiCad 9.0.8. The module is an SN65HVD230 plus a 2-pin CAN terminal and a 120 Ω termination jumper. The FPGA implements the CAN controller.
+Project: [disdi/canpmod](https://github.com/disdi/canpmod). Active sources are KiCad 9.0.8. License is MIT, copyright 2024 disdi. The module is an SN65HVD230 plus a 2-pin CAN terminal and a 120 Ω termination jumper. The FPGA implements the CAN controller.
 
 ![Current CAN PMOD front copper and silkscreen](canpmod-front.svg)
 
@@ -45,7 +45,7 @@ The 3D render on the CAN page is the original drawing. The front plot above is t
 
 ## 10BASE-T1S PMOD (JB)
 
-Project: [open-single-pair-ethernet](https://saketsinha.de/open-single-pair-ethernet/#step-0-), Step 0. The PHY is a Microchip LAN8670 in RMII mode. The cable side is a 2-pin screw terminal on a 10BASE-T1S mixing segment.
+Project: [disdi/10BaseT1S-PMOD](https://github.com/disdi/10BaseT1S-PMOD). Active sources are KiCad 9.0.8, revision 0.2. License is MIT, copyright 2024 disdi, the same text as canpmod. The PHY is a Microchip LAN8670 in RMII mode. The cable side is a 2-pin screw terminal on a 10BASE-T1S mixing segment. Roadmap notes remain in [Open Single Pair Ethernet](https://saketsinha.de/open-single-pair-ethernet/#step-0-).
 
 ![Step 0 silkscreen](step0-silk.svg)
 

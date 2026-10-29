@@ -40,12 +40,12 @@ The host for these pages is a Digilent Arty A7-100T.
 | J10 | USB power, console and programming |
 | J9 | Onboard Ethernet PHY: Linux TFTP and lab IP |
 | JC (PMOD-C) | [CAN transceiver PMOD](https://github.com/disdi/canpmod) |
-| JB (PMOD-B) | [10BASE-T1S PMOD](https://github.com/disdi/open-single-pair-ethernet), revision 0.2 |
+| JB (PMOD-B) | [10BASE-T1S PMOD](https://github.com/disdi/10BaseT1S-PMOD), revision 0.2 |
 
 The two PMODs and the onboard PHY can sit on the board together. JB is also used by the VexRiscv SWD debug work; run 10BASE-T1S or SWD on that header, one at a time.
 
 Pin maps, termination and mating notes are on [Hardware PMODs](Hardware-PMODs.md). CAN bring-up stays on [CAN communication](Communication-with-CAN-devices.md). The automotive Ethernet path is on [10BASE-T1S bringup](10BASE-T1S-bringup.md). Putting both buses on one SoC is [Zonal gateway](Zonal-gateway.md).
 
-The Step 0 LAN8670 module is designed and routed. LiteEth RMII/PLCA integration and a working 10BASE-T1S link remain open.
+The [10BASE-T1S LAN8670 module](https://github.com/disdi/10BaseT1S-PMOD) is designed and routed. LiteEth RMII/PLCA integration and a working 10BASE-T1S link remain open.
 
-Roadmap and schematic notes live in [Open Single Pair Ethernet](http://saketsinha.de/open-single-pair-ethernet/).
+Roadmap notes live in [Open Single Pair Ethernet](https://saketsinha.de/open-single-pair-ethernet/).

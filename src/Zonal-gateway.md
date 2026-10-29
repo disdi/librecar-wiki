@@ -5,7 +5,7 @@ The [Introduction](title-page.md) draws a zone controller: CAN toward nearby sen
 ```
 sensors / actuators ── CAN pair ── CAN PMOD @ JC ── CTUCAN ──┐
                                                               ├─ VexRiscv Linux
-zonal backbone ──── 10BASE-T1S pair ── Step 0 @ JB ── LiteEth ┘
+zonal backbone ──── 10BASE-T1S pair ── 10BASE-T1S PMOD @ JB ── LiteEth ┘
 lab / TFTP ──────── RJ45 ────── onboard PHY @ J9
 ```
 
@@ -33,7 +33,7 @@ Replace the IP hop with the mixing segment when the LAN8670 PMOD is up:
 can0 (JC) ── user-space gateway ── eth1 (JB, 10BASE-T1S)
 ```
 
-Same SocketCAN and Ethernet sockets. The cable becomes a single pair with PLCA instead of an RJ45 switch. Fit CAN JP1 and both Step 0 jumpers on end nodes. Leave them open on drop nodes.
+Same SocketCAN and Ethernet sockets. The cable becomes a single pair with PLCA instead of an RJ45 switch. Fit CAN JP1 and both 10BASE-T1S PMOD jumpers on end nodes. Leave them open on drop nodes.
 
 Useful first checks, once both interfaces exist:
 
@@ -44,4 +44,4 @@ Useful first checks, once both interfaces exist:
 
 ## What is still open
 
-The lab gateway on J9 is documented on librecar.dev. The zonal T1S gateway needs the Step 0 module, LiteEth RMII/PLCA on JB, and a second Linux netdev. Those pieces are designed and not yet a proven link. Keep J9 connected while bringing T1S up so TFTP and SSH stay on the lab PHY.
+The lab gateway on J9 is documented on librecar.dev. The zonal T1S gateway needs the [10BASE-T1S PMOD](https://github.com/disdi/10BaseT1S-PMOD), LiteEth RMII/PLCA on JB, and a second Linux netdev. Those pieces are designed and not yet a proven link. Keep J9 connected while bringing T1S up so TFTP and SSH stay on the lab PHY.
