@@ -13,7 +13,7 @@ CAN bring-up is [CAN communication](Communication-with-CAN-devices.md). The T1S 
 
 ## Lab gateway already on J9
 
-[Milestone 4](https://librecar.dev/2024/04/milestone-four-complete/) brought up the Arty onboard Ethernet in LiteX Linux and ran [cannelloni](https://github.com/mguentner/cannelloni). Cannelloni carries CAN frames over UDP/TCP/SCTP between a SocketCAN interface and a remote IP host.
+[Milestone 4](https://saketsinha.de/librecar-demo/2024/04/milestone-four-complete/) brought up the Arty onboard Ethernet in LiteX Linux and ran [cannelloni](https://github.com/mguentner/cannelloni). Cannelloni carries CAN frames over UDP/TCP/SCTP between a SocketCAN interface and a remote IP host.
 
 That path is:
 
@@ -23,7 +23,7 @@ can0 (CTUCAN + CAN PMOD) ── cannelloni ── eth0 (J9) ── IP network �
 
 It is a CAN–Ethernet gateway on the lab LAN. It is the right tool for PC tooling, logging and a Raspberry Pi on the bench. J9 is office Ethernet. The zonal diagram’s backbone is 10BASE-T1S.
 
-[Milestone 5](https://librecar.dev/2024/04/milestone-five/) and the [XCP update](https://librecar.dev/2024/04/milestone-five-update/) add UDS and XCP on that same Linux user-space. Those protocols can ride CAN or IP once the sockets exist.
+[Milestone 5](https://saketsinha.de/librecar-demo/2024/04/milestine-five/) and the [XCP update](https://saketsinha.de/librecar-demo/2024/04/milestine-five-update/) add UDS and XCP on that same Linux user-space. Those protocols can ride CAN or IP once the sockets exist.
 
 ## Automotive gateway on JB
 
@@ -44,4 +44,4 @@ Useful first checks, once both interfaces exist:
 
 ## What is still open
 
-The lab gateway on J9 is documented on librecar.dev. The zonal T1S gateway needs the [10BASE-T1S PMOD](https://github.com/disdi/10BaseT1S-PMOD), LiteEth RMII/PLCA on JB, and a second Linux netdev. Those pieces are designed and not yet a proven link. Keep J9 connected while bringing T1S up so TFTP and SSH stay on the lab PHY.
+The lab gateway on J9 is documented in [Milestone 4](https://saketsinha.de/librecar-demo/2024/04/milestone-four-complete/). The zonal T1S gateway needs the [10BASE-T1S PMOD](https://github.com/disdi/10BaseT1S-PMOD), LiteEth RMII/PLCA on JB, and a second Linux netdev. Those pieces are designed and not yet a proven link. Keep J9 connected while bringing T1S up so TFTP and SSH stay on the lab PHY.
