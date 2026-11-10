@@ -46,4 +46,4 @@ The original 3D view is kept for reference:
 * Communicate between Arty A7-100T and CAN device usinf cansend from can-utils package.
 ![litex-can](litex-can.png)
 
-To carry those frames onto lab Ethernet see [Zonal gateway](Zonal-gateway.md). Automotive Ethernet on JB is a separate PHY: [10BASE-T1S bringup](10BASE-T1S-bringup.md).
+To carry those frames onto lab Ethernet see [Zonal gateway](Zonal-gateway.md). Automotive Ethernet on JB is a separate PHY: [10BASE-T1S bringup](10BASE-T1S-bringup.md). Driving a three-phase motor from the Arty, instead of sending commands to a closed ODrive S1, is [Three-phase motor](Three-phase-motor.md).

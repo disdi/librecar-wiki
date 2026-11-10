@@ -29,6 +29,8 @@ It can be used to:
 
 - [ ] Act as a CAN–10BASE-T1S zonal gateway, with CAN on JC and the 10 Mb/s mixing segment on JB.
 
+- [ ] Drive a three-phase motor from the Arty with LiteX PWM. See [Three-phase motor](Three-phase-motor.md).
+
 We use [LiteX SoC builder framework](https://github.com/enjoy-digital/litex) to provide a RISC-V soft processor core and integrate with it peripherals like CAN and Ethernet used in automotive world.
 
 ## Hardware on this Arty
@@ -44,7 +46,7 @@ The host for these pages is a Digilent Arty A7-100T.
 
 The two PMODs and the onboard PHY can sit on the board together. JB is also used by the VexRiscv SWD debug work; run 10BASE-T1S or SWD on that header, one at a time.
 
-Pin maps, termination and mating notes are on [Hardware PMODs](Hardware-PMODs.md). CAN bring-up stays on [CAN communication](Communication-with-CAN-devices.md). The automotive Ethernet path is on [10BASE-T1S bringup](10BASE-T1S-bringup.md). Putting both buses on one SoC is [Zonal gateway](Zonal-gateway.md).
+Pin maps, termination and mating notes are on [Hardware PMODs](Hardware-PMODs.md). CAN bring-up stays on [CAN communication](Communication-with-CAN-devices.md). Driving a three-phase motor from LiteX PWM, rather than from the ODrive S1, is [Three-phase motor](Three-phase-motor.md). The automotive Ethernet path is on [10BASE-T1S bringup](10BASE-T1S-bringup.md). Putting both buses on one SoC is [Zonal gateway](Zonal-gateway.md).
 
 The [10BASE-T1S LAN8670 module](https://github.com/disdi/10BaseT1S-PMOD) is designed and routed. LiteEth RMII/PLCA integration and a working 10BASE-T1S link remain open.
 
