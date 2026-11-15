@@ -1,6 +1,6 @@
 # Three-phase motor
 
-LibreCar drives a three-phase motor from the Arty. Milestone 3 already spun a brushless motor, but the Arty only sent CAN commands to an [ODrive S1](https://odriverobotics.com/). The S1 ran the commutation. That firmware is not public. The [ODrive repository](https://github.com/odriverobotics/ODrive) supports the older v3 boards only.
+LibreCar drives a three-phase motor from the Arty. [Milestone 3](https://saketsinha.de/librecar-demo/2024/03/milestone-three-complete/) already spun a brushless motor, but the Arty only sent CAN commands to an [ODrive S1](https://odriverobotics.com/). The S1 ran the commutation. That firmware is not public. The [ODrive repository](https://github.com/odriverobotics/ODrive) supports the older v3 boards only.
 
 The carrier is the LiteX PWM core, [`litex/soc/cores/pwm.py`](https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/pwm.py). `MultiChannelPWM` shares one `period` and gives each pad its own `width`. The pad is high while the counter is below `width`. For a motor, three channels are the three phase duties. A LiteX Arty system clock is usually 100 MHz, so a 20 kHz carrier is a period of 5000 cycles.
 
@@ -24,7 +24,7 @@ Field-oriented control is the step after the motor turns. It adds phase-current 
 
 ## Status
 
-`MultiChannelPWM` is upstream LiteX. The LibreCar bitstream does not instantiate it yet, and this repository has no gate-driver board. Milestone 3 remains the CAN demonstration with the S1.
+`MultiChannelPWM` is upstream LiteX. The LibreCar bitstream does not instantiate it yet, and this repository has no gate-driver board. [Milestone 3](https://saketsinha.de/librecar-demo/2024/03/milestone-three-complete/) remains the CAN demonstration with the S1.
 
 When the bitstream changes:
 
