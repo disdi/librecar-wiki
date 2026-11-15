@@ -2,7 +2,7 @@
 
 **Plan to attach IEEE 802.3cg 10BASE-T1S to the same Arty A7-100T LiteX SoC that already runs CAN and lab Ethernet.**
 
-**Project Page** : [Open-single-pair-ethernet](https://saketsinha.de/open-single-pair-ethernet/)
+**Project Page** : [Open-single-pair-ethernet](https://opensinglepairethernet.com/)
 
 10BASE-T1S is a 10 Mb/s half-duplex mixing segment on one twisted pair. Nodes share the pair. PLCA (Physical Layer Collision Avoidance) grants transmit turns so the bus stays deterministic. That is the 10 Mb/s automotive backbone drawn on the [Introduction](title-page.md).
 
@@ -45,11 +45,11 @@ Half-duplex 10BASE-T1S with PLCA is extra work on top of a generic RMII 100 Mb/s
 
 Linux later sees this port as a second `eth` device. SocketCAN stays on `can0` from CTUCAN.
 
-This work is planned as part of [Step-1 : mac-with-external-phy-10baset1s-phy-from-microchip-lan8670](https://saketsinha.de/open-single-pair-ethernet/#step-1--mac-with-external-phy-10baset1s-phy-from-microchip-lan8670)
+This work is planned as part of [Step-1 : mac-with-external-phy-10baset1s-phy-from-microchip-lan8670](https://opensinglepairethernet.com/#step-1--mac-with-external-phy-10baset1s-phy-from-microchip-lan8670)
 
 ## digital PHY
 
-Once the external PHY path works, [Step 2 : digital-phy-pcs--plca-inside-fpga](https://saketsinha.de/open-single-pair-ethernet/#step-2--digital-phy-pcs--plca-inside-fpga) moves Clause 147 PCS and Clause 148 PLCA into FPGA RTL and talks to a small analog PMD over the OPEN Alliance TC14 3-pin interface.
+Once the external PHY path works, [Step 2 : digital-phy-pcs--plca-inside-fpga](https://opensinglepairethernet.com/#step-2--digital-phy-pcs--plca-inside-fpga) moves Clause 147 PCS and Clause 148 PLCA into FPGA RTL and talks to a small analog PMD over the OPEN Alliance TC14 3-pin interface.
 
 ![Step 2: digital PHY inside the FPGA](step2.png)
 

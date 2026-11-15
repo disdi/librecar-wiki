@@ -50,6 +50,6 @@ Pin maps, termination and mating notes are on [Hardware PMODs](Hardware-PMODs.md
 
 The [10BASE-T1S LAN8670 module](https://github.com/disdi/10BaseT1S-PMOD) is designed and routed. LiteEth RMII/PLCA integration and a working 10BASE-T1S link remain open.
 
-Roadmap notes live in [Open Single Pair Ethernet](https://saketsinha.de/open-single-pair-ethernet/).
+Roadmap notes live in [Open Single Pair Ethernet](https://opensinglepairethernet.com/).
 
 NLnet milestone notes are at [https://saketsinha.de/librecar-demo/](https://saketsinha.de/librecar-demo/).
