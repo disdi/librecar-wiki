@@ -1,34 +1,54 @@
 # Three-phase motor
 
-LibreCar drives a three-phase motor from the Arty. [Milestone 3](https://saketsinha.de/librecar-demo/2024/03/milestone-three-complete/) already spun a brushless motor, but the Arty only sent CAN commands to an [ODrive S1](https://odriverobotics.com/). The S1 ran the commutation. That firmware is not public. The [ODrive repository](https://github.com/odriverobotics/ODrive) supports the older v3 boards only.
-
-The carrier is the LiteX PWM core, [`litex/soc/cores/pwm.py`](https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/pwm.py). `MultiChannelPWM` shares one `period` and gives each pad its own `width`. The pad is high while the counter is below `width`. For a motor, three channels are the three phase duties. A LiteX Arty system clock is usually 100 MHz, so a 20 kHz carrier is a period of 5000 cycles.
+LibreCar can drive a three-phase motor directly from the Arty. [Milestone 3](https://saketsinha.de/librecar-demo/2024/03/milestone-three-complete/) already spun a brushless motor, but the Arty only sent CAN commands to an external [ODrive S1](https://odriverobotics.com/). The long-term path is for the FPGA itself to generate the PWM and close the loop, using the same high-level CAN interface.
 
 ```
-Linux setpoint (speed or torque)
+CAN setpoint (speed / torque / position)
         │
         ▼
-gateware commutation  ← 3 hall inputs
+Linux or softcore ── writes one setpoint register
         │
         ▼
-3 PWM channels ── PMOD ── gate driver ── 3 half-bridges ── motor
+gateware commutation ← hall inputs
+        │              ← optional current-sense ADC
+        ▼
+3 (or 6) PWM channels ── PMOD (control signals only)
+        │
+        ▼
+external gate driver ── 3 half-bridges ── motor
 ```
 
-Linux writes the setpoint. It does not update the three widths on every carrier cycle. A gateware block reads the hall sensors and chooses the sector. The first mode that turns the shaft is six-step commutation: two phases are driven, the third floats, and the hall code advances the sector. `width` sets how hard the two active phases are driven.
+## Hardware split
 
-The stock PWM core has no dead time and no complementary output. The gate driver has to make the low-side switch and insert the dead time from each phase PWM. A DRV8323-class driver does that from three inputs. The published ODrive v3.6 power stage and an open [SimpleFOC](https://github.com/simplefoc/Arduino-FOC) inverter are the same shape of board. The PMOD pin connects to that driver, not to a motor winding.
+- **PMOD (JA or JD)** carries only low-power control signals: 3–6 PWM, 3 hall inputs, enable, fault, and optional current-sense analog or SPI.
+- The **power stage** is a separate board (DRV8323-class, IR2136-style open-source board, [SimpleFOC](https://github.com/simplefoc/Arduino-FOC) inverter, or [VESC](https://github.com/vedderb/bldc-hardware) power stage). The PMOD never carries motor current.
+- JC remains the CAN PMOD. JB remains the 10BASE-T1S PMOD.
 
-JA or JD can carry the three PWM outputs and the three hall inputs. JC stays the CAN PMOD. JB stays the 10BASE-T1S PMOD.
+## Control modes
 
-Field-oriented control is the step after the motor turns. It adds phase-current measurements, sampled in step with the carrier, and it updates the three widths from that current. That is the loop the S1 was running. Six-step is enough to drive the motor from LibreCar.
+The carrier is the LiteX PWM core, [`litex/soc/cores/pwm.py`](https://github.com/enjoy-digital/litex/blob/master/litex/soc/cores/pwm.py). `MultiChannelPWM` shares one `period` and gives each pad its own `width`. The pad is high while the counter is below `width`. A LiteX Arty system clock is usually 100 MHz, so a 20 kHz carrier is a period of 5000 cycles.
+
+Linux or the softcore writes one setpoint register. It does not update the widths on every carrier cycle.
+
+The first mode is six-step commutation driven by the halls. Two phases are driven, the third floats, and the hall code advances the sector. `width` sets how hard the two active phases are driven.
+
+The stock PWM core has no dead time and no complementary output. The external gate driver makes the low-side switch and inserts the dead time. A DRV8323-class driver does that from three PWM inputs. Six PWM channels are for a driver that expects a complementary pair per phase.
+
+The later mode is field-oriented control with phase-current sampling synchronized to the PWM carrier, in the style of a [VESC](https://vesc-project.com/) controller. That is the loop the S1 was running. Six-step is enough to turn the shaft from LibreCar.
+
+Reference boards are VESC-controller style designs and SimpleFOC inverters. The published ODrive v3.6 power stage is the same shape. The [ODrive repository](https://github.com/odriverobotics/ODrive) supports the older v3 boards only. The S1 firmware is not public.
 
 ## Status
 
 `MultiChannelPWM` is upstream LiteX. The LibreCar bitstream does not instantiate it yet, and this repository has no gate-driver board. [Milestone 3](https://saketsinha.de/librecar-demo/2024/03/milestone-three-complete/) remains the CAN demonstration with the S1.
 
+The hardware pattern (PMOD or header for control signals + external power stage) is already common in the SimpleFOC and open BLDC communities. No custom LibreCar power stage is required to start.
+
 When the bitstream changes:
 
-1. Instantiate `MultiChannelPWM` with three channels on JA or JD.
-2. Add the hall inputs and the six-step sector block beside the PWM core.
-3. Give Linux one setpoint register.
-4. Connect those three pads to a gate driver that inserts dead time, then to the three half-bridges.
+1. Instantiate `MultiChannelPWM` with three or six channels on JA or JD.
+2. Add the hall inputs and the six-step sector block.
+3. Add optional current-sense ADC inputs.
+4. Expose one setpoint register to Linux or the softcore.
+5. Wire the PMOD control signals to an external gate-driver board that inserts dead time.
+6. Receive the setpoint over the existing CAN interface.
